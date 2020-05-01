@@ -12,3 +12,15 @@ def client():
 def response_get_tasks(client):
     response = client.get('/tasks')
     return response
+
+@pytest.fixture
+def response_post_tasks(client):
+    response = client.post('/tasks')
+    return response
+
+@pytest.fixture
+def task():
+    return {
+        'title': 'title',
+        'description': 'description'
+    }
